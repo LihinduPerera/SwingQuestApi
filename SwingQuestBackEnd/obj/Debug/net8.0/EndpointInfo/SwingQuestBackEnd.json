@@ -5,6 +5,191 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Questions": {
+      "get": {
+        "tags": [
+          "Questions"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Questions"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Questions"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Questions"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Questions"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questions"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questions"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Questions"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Questions"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Questions"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Questions/{id}": {
+      "get": {
+        "tags": [
+          "Questions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Questions"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Questions"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Questions"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Questions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questions"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questions"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Questions"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Questions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Users": {
       "get": {
         "tags": [
@@ -193,10 +378,52 @@
   },
   "components": {
     "schemas": {
+      "Questions": {
+        "required": [
+          "answer1",
+          "answer2",
+          "answer3",
+          "answer4",
+          "correctAnswer",
+          "question"
+        ],
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "question": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "answer1": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "answer2": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "answer3": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "answer4": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "correctAnswer": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "Users": {
         "required": [
-          "answer",
-          "name"
+          "name",
+          "password"
         ],
         "type": "object",
         "properties": {
@@ -208,9 +435,13 @@
             "minLength": 1,
             "type": "string"
           },
-          "answer": {
+          "password": {
             "minLength": 1,
             "type": "string"
+          },
+          "correctAnswersCount": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

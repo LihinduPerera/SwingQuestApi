@@ -11,6 +11,8 @@ namespace SwingQuestBackEnd.Models
         public String name { get; set; } = "";
 
         [Required]
-        public String answer { get; set; } = "";
+        public String password { get; set; } = "";
+
+        public int correctAnswersCount { get; set; }
     }
 }

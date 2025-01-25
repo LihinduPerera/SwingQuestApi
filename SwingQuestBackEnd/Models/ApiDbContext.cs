@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SwingQuestBackEnd.Models;
 
 namespace SwingQuestBackEnd.Models
 {
@@ -10,5 +11,6 @@ namespace SwingQuestBackEnd.Models
         }
 
         public DbSet<Users> users { get; set; }
+        public DbSet<SwingQuestBackEnd.Models.Questions> Questions { get; set; } = default!;
     }
 }

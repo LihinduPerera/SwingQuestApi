@@ -278,3 +278,4 @@ C:\Users\Lihindu Perera\Documents\VisualStudioProjects\ASP.NET api\SwingQuestBac
 C:\Users\Lihindu Perera\Documents\VisualStudioProjects\ASP.NET api\SwingQuestBackEnd\SwingQuestBackEnd\obj\Debug\net8.0\SwingQuestBackEnd.pdb
 C:\Users\Lihindu Perera\Documents\VisualStudioProjects\ASP.NET api\SwingQuestBackEnd\SwingQuestBackEnd\obj\Debug\net8.0\SwingQuestBackEnd.genruntimeconfig.cache
 C:\Users\Lihindu Perera\Documents\VisualStudioProjects\ASP.NET api\SwingQuestBackEnd\SwingQuestBackEnd\obj\Debug\net8.0\ref\SwingQuestBackEnd.dll
+C:\Users\Lihindu Perera\Documents\VisualStudioProjects\ASP.NET api\SwingQuestBackEnd\SwingQuestBackEnd\obj\Debug\net8.0\SwingQuestBackEnd.sourcelink.json
