@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SwingQuestBackEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9771782efda3b1b8ea09f9eb1a50b69f9062951")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cceb1c3cd58507eacf86fe63c318522f7c02218")]
 [assembly: System.Reflection.AssemblyProductAttribute("SwingQuestBackEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SwingQuestBackEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

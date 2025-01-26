@@ -104,7 +104,6 @@ namespace SwingQuestBackEnd.Controllers
             return _context.users.Any(e => e.userId == id);
         }
 
-        // PUT: api/Users/5/correctAnswers
         [HttpPut("{id}/correctAnswers")]
         public async Task<IActionResult> UpdateCorrectAnswersCount(int id, [FromBody] int correctAnswersCount)
         {
