@@ -13,6 +13,7 @@ namespace SwingQuestBackEnd.Models
         [Required]
         public String password { get; set; } = "";
 
-        public int correctAnswersCount { get; set; }
+        [Required]
+        public int correctAnswersCount { get; set; } = 0;
     }
 }

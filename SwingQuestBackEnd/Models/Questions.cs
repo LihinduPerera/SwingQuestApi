@@ -8,21 +8,21 @@ namespace SwingQuestBackEnd.Models
         public int questionId { get; set; }
 
         [Required]
-        public String question { get; set; }
+        public String question { get; set; } = "";
 
         [Required]
-        public String answer1 { get; set; }
+        public String answer1 { get; set; } = "";
 
         [Required]
-        public String answer2 { get; set; }
+        public String answer2 { get; set; } = "";
 
         [Required]
-        public String answer3 { get; set; }
+        public String answer3 { get; set; } = "";
 
         [Required]
-        public String answer4 { get; set; }
+        public String answer4 { get; set; } = "";
 
         [Required]
-        public int correctAnswer { get; set; }
+        public int correctAnswer { get; set; } = 0;
     }
 }

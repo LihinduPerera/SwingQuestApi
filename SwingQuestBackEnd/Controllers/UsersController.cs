@@ -103,5 +103,38 @@ namespace SwingQuestBackEnd.Controllers
         {
             return _context.users.Any(e => e.userId == id);
         }
+
+        // PUT: api/Users/5/correctAnswers
+        [HttpPut("{id}/correctAnswers")]
+        public async Task<IActionResult> UpdateCorrectAnswersCount(int id, [FromBody] int correctAnswersCount)
+        {
+            var user = await _context.users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Update only the correctAnswersCount field
+            user.correctAnswersCount = correctAnswersCount;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UsersExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
     }
 }

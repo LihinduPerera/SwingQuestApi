@@ -1,7 +1,43 @@
 [
   {
+    "ContainingType": "SwingQuestBackEnd.Controllers.HostingStatusController",
+    "Method": "GetHostingStatus",
+    "RelativePath": "api/HostingStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SwingQuestBackEnd.Controllers.HostingStatusController",
+    "Method": "SetHostingStatus",
+    "RelativePath": "api/HostingStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "isHosting",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SwingQuestBackEnd.Controllers.QuestionsController",
-    "Method": "GetQuestions",
+    "Method": "Getquestions",
     "RelativePath": "api/Questions",
     "HttpMethod": "GET",
     "IsController": true,
@@ -211,6 +247,27 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SwingQuestBackEnd.Controllers.UsersController",
+    "Method": "UpdateCorrectAnswersCount",
+    "RelativePath": "api/Users/{id}/correctAnswers",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "correctAnswersCount",
         "Type": "System.Int32",
         "IsRequired": true
       }

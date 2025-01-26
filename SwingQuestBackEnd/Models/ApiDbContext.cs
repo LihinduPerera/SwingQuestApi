@@ -11,6 +11,6 @@ namespace SwingQuestBackEnd.Models
         }
 
         public DbSet<Users> users { get; set; }
-        public DbSet<SwingQuestBackEnd.Models.Questions> Questions { get; set; } = default!;
+        public DbSet<Questions> questions { get; set; }
     }
 }

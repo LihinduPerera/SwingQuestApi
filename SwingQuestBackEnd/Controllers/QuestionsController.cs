@@ -22,16 +22,16 @@ namespace SwingQuestBackEnd.Controllers
 
         // GET: api/Questions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Questions>>> GetQuestions()
+        public async Task<ActionResult<IEnumerable<Questions>>> Getquestions()
         {
-            return await _context.Questions.ToListAsync();
+            return await _context.questions.ToListAsync();
         }
 
         // GET: api/Questions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Questions>> GetQuestions(int id)
         {
-            var questions = await _context.Questions.FindAsync(id);
+            var questions = await _context.questions.FindAsync(id);
 
             if (questions == null)
             {
@@ -77,7 +77,7 @@ namespace SwingQuestBackEnd.Controllers
         [HttpPost]
         public async Task<ActionResult<Questions>> PostQuestions(Questions questions)
         {
-            _context.Questions.Add(questions);
+            _context.questions.Add(questions);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetQuestions", new { id = questions.questionId }, questions);
@@ -87,13 +87,13 @@ namespace SwingQuestBackEnd.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestions(int id)
         {
-            var questions = await _context.Questions.FindAsync(id);
+            var questions = await _context.questions.FindAsync(id);
             if (questions == null)
             {
                 return NotFound();
             }
 
-            _context.Questions.Remove(questions);
+            _context.questions.Remove(questions);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -101,7 +101,7 @@ namespace SwingQuestBackEnd.Controllers
 
         private bool QuestionsExists(int id)
         {
-            return _context.Questions.Any(e => e.questionId == id);
+            return _context.questions.Any(e => e.questionId == id);
         }
     }
 }
